@@ -17,35 +17,30 @@ const App = () => {
 
     createEffect(() => {
         let strength: number = 0;
+        let optionsCount: number = 0;
+        let barColor = "#FCCD63";
+        let strengthSetters = [setWeak, setMediumLow, setMediumHigh, setStrong];
 
-        if (charCount() <= 10 && charCount() > 5) {
-            strength += 2;
+        if (uppercase()) optionsCount++;
+        if (lowercase()) optionsCount++;
+        if (numbers()) optionsCount++;
+        if (symbols()) optionsCount++;
+
+        if (charCount() <= 5) {
+            strength = 0;
+        } else if (charCount() > 5 && charCount() < 10) {
+            strength = optionsCount <= 2 ? 0 : optionsCount == 3 ? 1 : 2;
         } else {
-            strength += 5;
+            strength = optionsCount ? optionsCount - 1 : 0;
         }
 
-        if (charCount() > 5) {
-            if (uppercase()) strength += 2;
-            if (numbers()) strength += 3;
-            if (symbols()) strength += 4;
-        }
+        setStrengthText(strength == 0 ? 'WEAK' : strength == 3 ? 'STRONG' : 'MEDIUM');
 
-        if (strength > 10) {
-            setStrengthText('STRONG');
-            setStrong('yellow');
-        }
-        if (strength <= 10 && strength > 5) {
-            setStrengthText('MEDIUM');
-            if (strength > 7) setMediumHigh('yellow');
-            setMediumLow('yellow');
-            setStrong('');
-        }
-        if (strength <= 5) {
-            setStrengthText('WEAK');
-            setWeak('yellow');
-            setStrong('');
-            setMediumHigh('');
-            setMediumLow('');
+        for (let i = 0; i < strengthSetters.length; ++i) {
+            if (i <= strength)
+                strengthSetters[i](barColor);
+            else
+                strengthSetters[i]('');
         }
     });
 
@@ -140,7 +135,7 @@ const App = () => {
                         </span>
                     </div >
                 </div >
-                <button class="btn btn-outline" onClick={() => generate_password()}>Generate <i class='fa fa-arrow-right'></i></button>
+                <button class="btn btn-outline" id="generate-btn" onClick={() => generate_password()}>Generate <i class='fa fa-arrow-right'></i></button>
             </div >
         </div >
     );
