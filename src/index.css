@@ -2,3 +2,92 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html {
+    font-family: monospace, Arial;
+    color: #FFFFFF;
+    font-weight: bold;
+    background-color: #100F15;
+}
+
+body {
+    margin-top: 50px;
+}
+
+.main {
+    margin: auto;
+    width: 450px;
+}
+
+h3 {
+    text-align: center;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.generator {
+    font-size: 18px;
+    padding: 15px;
+    line-height: 2.5em; 
+}
+
+.input-group {
+    margin-bottom: 10px;
+}
+
+input[type="text"]{
+    width: 90%;
+}
+
+#copy {
+    border-radius: 0%;
+}
+
+img {
+    width: 25px;
+}
+
+input[type="range"] {
+    width: 100%;
+}
+
+.character-length {
+    display: flex;
+    justify-content: space-between;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+    width: 18px;
+    height: 18px;
+    background-color: green;
+}
+
+#strength {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+    padding: 0 10px;
+}
+
+#strength-value {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#strength-value .strength-bar {
+    flex: 1;
+    width: 7px;
+    height: 18px;
+    border: 1px solid #CCCCCC;
+    margin-left: 10px;
+}
+
+button {
+    width: 100%;
+}
+
+i {
+    margin-left: 20px;
+}
