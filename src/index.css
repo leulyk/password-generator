@@ -6,8 +6,6 @@
 html {
     font-family: monospace, Arial;
     color: #FFFFFF;
-    font-weight: bold;
-    background-color: #100F15;
 }
 
 body {
@@ -23,6 +21,7 @@ h3 {
     text-align: center;
     padding: 10px;
     font-size: 20px;
+    font-weight: bold;
 }
 
 .generator {
@@ -56,11 +55,14 @@ input[type="range"] {
     justify-content: space-between;
 }
 
+.charCount {
+    color: #75FF55;
+}
+
 input[type="checkbox"] {
     margin-right: 10px;
     width: 18px;
     height: 18px;
-    background-color: green;
 }
 
 #strength {
@@ -84,8 +86,13 @@ input[type="checkbox"] {
     margin-left: 10px;
 }
 
-button {
+#generate-btn {
+    color: #77FF55;
     width: 100%;
+}
+
+#generate-btn:hover {
+    background: #222222;
 }
 
 i {
