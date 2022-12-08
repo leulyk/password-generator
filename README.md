@@ -1,12 +1,20 @@
 # [Random password generator]()
 
-> See the live preview [here]()
+<p float="left">
+<img src="/images/solidjs-2.jpeg" width=180>
+<img src="/images/typescript-1.png" width=180>
+<img src="/images/pouchdb-2.png" width=140>
+<img src="/images/daisyUI.svg" width=250>
+</p>
 
-<img src="/images/solidjs-2.jpeg" width=100>
-<img src="/images/daisyUI.svg" width=150>
-<img src="/images/typescript-1.png" width=100>
-<img src="/images/pouchdb-2.png" width=80>
-<br />
+## Run project
+``` bash 
+$ npm install 
+$ npm run dev
+```
+
+## See the live preview [here]()
+
 <img src="/images/screenshot.png">
 
 ## Author
