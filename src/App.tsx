@@ -109,7 +109,7 @@ const App = () => {
             <h3>Password Generator</h3>
             <label data-theme="halloween" class="input-group">
                 <input type="text" placeholder="password" id="password" class="input input-bordered" value={password()} disabled />
-                <span id="copy"><a href="#" onClick={() => copyText()}><img src="images/copy.png" alt="copy icon" /></a></span>
+                <span id="copy"><a href="#" onClick={() => copyText()}><img src="/images/copy.png" alt="copy icon" /></a></span>
             </label>
             <div data-theme="halloween" class="generator">
                 <div>
