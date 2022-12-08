@@ -40,7 +40,8 @@ input[type="text"]{
 }
 
 #copy {
-    border-radius: 20%;
+    border-top-right-radius: 20%;
+    border-bottom-right-radius: 20%;
     background-color: #77DD55;
     width: 10%;
 }
