@@ -1,5 +1,7 @@
 import { createEffect, createSignal } from "solid-js";
 
+let passwordDb = new PouchDB('passwords');
+
 const App = () => {
     const [charCount, setCharCount] = createSignal<number>(10);
     const [strengthText, setStrengthText] = createSignal<string>('WEAK');
@@ -12,7 +14,7 @@ const App = () => {
     const [mediumLow, setMediumLow] = createSignal<string>('');
     const [mediumHigh, setMediumHigh] = createSignal<string>('');
     const [strong, setStrong] = createSignal<string>('');
-
+    
     const changeSliderValue = (e: Event) => setCharCount(e.currentTarget.value);
 
     createEffect(() => {
@@ -63,7 +65,7 @@ const App = () => {
         }
     }
 
-    const generate_password = () => {
+    const generate_password = async () => {
         let options: string[] = [];
         if (uppercase()) options.push("uppercase");
         if (lowercase()) options.push("lowercase");
@@ -96,10 +98,11 @@ const App = () => {
             newPassword += char;
         }
         setPassword(newPassword);
+        
+        await passwordDb.put({ _id: new Date().toISOString(), password: newPassword });
     }
 
     const copyText = () => navigator.clipboard.writeText(password());
-
 
     return (
         <div class="main">
@@ -111,7 +114,7 @@ const App = () => {
             <div data-theme="halloween" class="generator">
                 <div>
                     <div class="character-length"><span>Character Length</span><span class="charCount">{charCount()}</span></div>
-                    <input type="range" min="0" max="20" value={charCount()} step="1" class="range-success" onInput={(ev) => changeSliderValue(ev)} />
+                    <input type="range" min="0" max="20" value={charCount()} step="1" onInput={(ev) => changeSliderValue(ev)} />
                     <input type="checkbox" id="uppercase_check" class="options" onInput={(e) => changeOptions(e)} />
                     <label for="uppercase_check">Include Uppercase Letters</label>
                     <br />
