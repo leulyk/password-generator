@@ -4,7 +4,7 @@
 @tailwind utilities;
 
 html {
-    font-family: monospace, Arial;
+    font-family: Garamond, "Courier", monospace, Arial;
     color: #FFFFFF;
 }
 
@@ -32,6 +32,7 @@ h3 {
 
 .input-group {
     margin-bottom: 10px;
+    border-radius: 20%;
 }
 
 input[type="text"]{
@@ -39,11 +40,15 @@ input[type="text"]{
 }
 
 #copy {
-    border-radius: 0%;
+    border-radius: 20%;
+    background-color: #77DD55;
+    width: 10%;
 }
 
 img {
     width: 25px;
+    margin: auto;
+    margin-top: 10px;
 }
 
 input[type="range"] {
