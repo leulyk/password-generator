@@ -13,7 +13,7 @@ $ npm install
 $ npm run dev
 ```
 
-## See the live preview [here]()
+## See the live preview [here](https://password-generator-leulyk.vercel.app/)
 
 <img src="/images/screenshot.png">
 
